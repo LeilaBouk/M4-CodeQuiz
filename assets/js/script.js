@@ -1,6 +1,8 @@
 
 //QUIZ QUESTIONS AND ANSWERS 
 
+
+
 var quiz = [
     {
         question: "Which of the following is not a JavaScript data type?",
@@ -83,21 +85,44 @@ startGame.addEventListener("click", function() {
 
     //Listen to see what option player chooses
 
+    var response;
+
     optionA.addEventListener("click", function() {
         console.log("Chose option A!")
+        response = quiz[quizIndex].options[0];
+        checkAnswer();
     });
 
     optionB.addEventListener("click", function() {
         console.log("Chose option B!")
+        response = quiz[quizIndex].options[1];
+        checkAnswer();
     });
 
     optionC.addEventListener("click", function() {
         console.log("Chose option C!")
+        response = quiz[quizIndex].options[2];
+        checkAnswer();
     });
 
     optionD.addEventListener("click", function() {
         console.log("Chose option D!")
+        response = quiz[quizIndex].options[3];
+        checkAnswer();
     });
+
+    function checkAnswer() {
+
+        console.log("player answered " + response);
+        console.log("correct answer is " + quiz[quizIndex].answer);
+
+        if (quiz[quizIndex].answer == response) {
+            console.log("Correct!")
+        }
+        else {
+            console.log("Wrong!")
+        }
+    };
 
     //to do
     //loop to next set of data in array on answer click
