@@ -36,7 +36,8 @@ var startGame = document.querySelector("#start");
 //Screen Elements
 
 var title = document.getElementById("titleScreen");
-var quizContainer = document.getElementById('quizContainer');
+var quizContainer = document.getElementById("quizContainer");
+var timer = document.getElementById("time");
 
 //Options
 
@@ -45,16 +46,36 @@ var optionB = document.getElementById("B");
 var optionC = document.getElementById("C");
 var optionD = document.getElementById("D");
 
-//to do- create choice elements one click.
-//asssign variable to each one
+//Set up variables
 
+var startTime = 60;
+var score = 0;
+
+// GAME FUNCTION
+
+//to do
+//Display question and options on buttons
+//loop to next set of data in array on answer click
 
 startGame.addEventListener("click", function() {
     console.log("game started!!");
 
     title.style.display = "none";
-
     quizContainer.style.display = "block";
+
+    //Make element appear on screen
+    timer.textContent = startTime;
+
+    //Timer go!
+    var timerOn = setInterval(function(){
+        startTime--;
+        timer.textContent = startTime;
+        if (startTime <= 0){
+            clearInterval(timerOn);
+        }
+    },1000);
+
+    
     
 });
 
