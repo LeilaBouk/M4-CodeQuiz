@@ -33,8 +33,29 @@ var quiz = [
 
 var startGame = document.querySelector("#start");
 
+//Screen Elements
+
+var title = document.getElementById("titleScreen");
+var quizContainer = document.getElementById('quizContainer');
+
+//Options
+
+var optionA = document.getElementById("A");
+var optionB = document.getElementById("B");
+var optionC = document.getElementById("C");
+var optionD = document.getElementById("D");
+
+//to do- create choice elements one click.
+//asssign variable to each one
+
+
 startGame.addEventListener("click", function() {
     console.log("game started!!");
+
+    title.style.display = "none";
+
+    quizContainer.style.display = "block";
+    
 });
 
 
