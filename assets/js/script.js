@@ -1,7 +1,5 @@
-//Make questions option buttons appear on start
-//hide original elements
-//make timer start on button click
-//create questions array
+
+//QUIZ QUESTIONS AND ANSWERS 
 
 var quiz = [
     {
@@ -31,13 +29,14 @@ var quiz = [
     },
 ]
 
-var startGame = document.querySelector("#start");
-
 //Screen Elements
+
+var startGame = document.querySelector("#start");
 
 var title = document.getElementById("titleScreen");
 var quizContainer = document.getElementById("quizContainer");
 var timer = document.getElementById("time");
+var question = document.getElementById("question");
 
 //Options
 
@@ -51,11 +50,7 @@ var optionD = document.getElementById("D");
 var startTime = 60;
 var score = 0;
 
-// GAME FUNCTION
-
-//to do
-//Display question and options on buttons
-//loop to next set of data in array on answer click
+//!!  GAME FUNCTION  !!//
 
 startGame.addEventListener("click", function() {
     console.log("game started!!");
@@ -75,7 +70,37 @@ startGame.addEventListener("click", function() {
         }
     },1000);
 
+
+    //Replace placeholder text with text from the array
+
+    quizIndex = 0;
     
+    question.textContent = quiz[quizIndex].question;
+    optionA.textContent = quiz[quizIndex].options[0];
+    optionB.textContent = quiz[quizIndex].options[1];
+    optionC.textContent = quiz[quizIndex].options[2];
+    optionD.textContent = quiz[quizIndex].options[3];
+
+    //Listen to see what option player chooses
+
+    optionA.addEventListener("click", function() {
+        console.log("Chose option A!")
+    });
+
+    optionB.addEventListener("click", function() {
+        console.log("Chose option B!")
+    });
+
+    optionC.addEventListener("click", function() {
+        console.log("Chose option C!")
+    });
+
+    optionD.addEventListener("click", function() {
+        console.log("Chose option D!")
+    });
+
+    //to do
+    //loop to next set of data in array on answer click
     
 });
 
