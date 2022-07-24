@@ -25,9 +25,19 @@ var quiz = [
         answer: "Emolga"
     },
     {
-        question:"Placeholder",
-        options: ["PH0", "PH1", "PH2", "PH3"],
-        answer: "PH0"
+        question:"egg",
+        options: ["ee", "PH1", "PH2", "PH3"],
+        answer: "ee"
+    },
+    {
+        question:"re",
+        options: ["re", "PH1", "PH2", "PH3"],
+        answer: "re"
+    },
+    {
+        question:"www",
+        options: ["ww", "PH1", "PH2", "PH3"],
+        answer: "ww"
     },
 ]
 
@@ -76,12 +86,15 @@ startGame.addEventListener("click", function() {
     //Replace placeholder text with text from the array
 
     quizIndex = 0;
+    questionDisplayer();
     
+    function questionDisplayer() {
     question.textContent = quiz[quizIndex].question;
     optionA.textContent = quiz[quizIndex].options[0];
     optionB.textContent = quiz[quizIndex].options[1];
     optionC.textContent = quiz[quizIndex].options[2];
     optionD.textContent = quiz[quizIndex].options[3];
+}
 
     //Listen to see what option player chooses
 
@@ -120,7 +133,6 @@ startGame.addEventListener("click", function() {
 
         if (quiz[quizIndex].answer === response) {
             console.log("Correct!")
-            nextQuestion();
         }
         else {
             console.log("Wrong!")
@@ -131,19 +143,13 @@ startGame.addEventListener("click", function() {
              } 
         }
 
+        quizIndex ++;
+        questionDisplayer();
+
     };
 
-    function nextQuestion() {
-        quizIndex ++;
-        question.textContent = quiz[quizIndex].question;
-        optionA.textContent = quiz[quizIndex].options[0];
-        optionB.textContent = quiz[quizIndex].options[1];
-        optionC.textContent = quiz[quizIndex].options[2];
-        optionD.textContent = quiz[quizIndex].options[3];
-    }
-
     //to do
-    //loop to next set of data in array on answer click
+    //make high score thing
     
 });
 
