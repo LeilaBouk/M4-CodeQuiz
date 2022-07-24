@@ -5,7 +5,7 @@
 
 var quiz = [
     {
-        question: "Which of the following is not a JavaScript data type?",
+        question: "Which of the following is NOT a JavaScript data type?",
         options: ["boolean", "string", "cycle", "number"],
         answer: "cycle"
     },
@@ -49,6 +49,8 @@ var title = document.getElementById("titleScreen");
 var quizContainer = document.getElementById("quizContainer");
 var timer = document.getElementById("time");
 var question = document.getElementById("question");
+var playerScore = document.getElementById("score");
+var gameOver = document.getElementById("gameOver");
 
 //Options
 
@@ -60,7 +62,6 @@ var optionD = document.getElementById("D");
 //Set up variables
 
 var startTime = 60;
-var score = 0;
 
 //!!  GAME FUNCTION  !!//
 
@@ -143,14 +144,29 @@ startGame.addEventListener("click", function() {
              } 
         }
 
+        //GO TO NEXT QUESTION
         quizIndex ++;
-        questionDisplayer();
+
+        if (quizIndex < quiz.length) {
+            questionDisplayer();
+        }
+        else {
+            endGame();
+        }
 
     };
-
-    //to do
-    //make high score thing
     
 });
+
+
+//END OF GAME
+
+function endGame() {
+    console.log("Game OVER!");
+    quizContainer.style.display = "none";
+
+    gameOver.style.display = "block";
+    playerScore.textContent = startTime;
+}
 
 
