@@ -25,9 +25,9 @@ var quiz = [
         answer: "Emolga"
     },
     {
-        question:"",
-        options: [""],
-        answer: ""
+        question:"Placeholder",
+        options: ["PH0", "PH1", "PH2", "PH3"],
+        answer: "PH0"
     },
 ]
 
@@ -111,18 +111,36 @@ startGame.addEventListener("click", function() {
         checkAnswer();
     });
 
+    //Now we check the answer by comparing the var in the options string to the var in the answer string
+
     function checkAnswer() {
 
         console.log("player answered " + response);
         console.log("correct answer is " + quiz[quizIndex].answer);
 
-        if (quiz[quizIndex].answer == response) {
+        if (quiz[quizIndex].answer === response) {
             console.log("Correct!")
+            nextQuestion();
         }
         else {
             console.log("Wrong!")
+            //take time off 
+            if (startTime >= 0) {
+            startTime -= 10;
+            timer.textContent = startTime;
+             } 
         }
+
     };
+
+    function nextQuestion() {
+        quizIndex ++;
+        question.textContent = quiz[quizIndex].question;
+        optionA.textContent = quiz[quizIndex].options[0];
+        optionB.textContent = quiz[quizIndex].options[1];
+        optionC.textContent = quiz[quizIndex].options[2];
+        optionD.textContent = quiz[quizIndex].options[3];
+    }
 
     //to do
     //loop to next set of data in array on answer click
