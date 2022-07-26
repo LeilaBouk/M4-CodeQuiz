@@ -1,8 +1,6 @@
 
 //QUIZ QUESTIONS AND ANSWERS 
 
-
-
 var quiz = [
     {
         question: "Which of the following is NOT a JavaScript data type?",
@@ -25,19 +23,19 @@ var quiz = [
         answer: "Emolga"
     },
     {
-        question:"egg",
-        options: ["ee", "PH1", "PH2", "PH3"],
-        answer: "ee"
+        question:"What is a comment used for in code?",
+        options: ["to execute functions", "to leave a comment within the code which doesn't effect the code itself", "for web users to leave feedback on a website", "to add bonus content to websites"],
+        answer: "to leave a comment within the code which doesn't effect the code itself"
     },
     {
-        question:"re",
-        options: ["re", "PH1", "PH2", "PH3"],
-        answer: "re"
+        question:"What is concat() used for in JavaScript?",
+        options: ["to solve math equations", "to search for bugs", "to merge two or more arrays", "it is not used for anything"],
+        answer: "to merge two or more arrays"
     },
     {
-        question:"www",
-        options: ["ww", "PH1", "PH2", "PH3"],
-        answer: "ww"
+        question:"When creating a variable which should NOT have its value re-assigned it's best to use",
+        options: ["var", "const", "let", "undefined"],
+        answer: "const"
     },
 ]
 
@@ -51,6 +49,9 @@ var timer = document.getElementById("time");
 var question = document.getElementById("question");
 var playerScore = document.getElementById("score");
 var gameOver = document.getElementById("gameOver");
+var restart = document.getElementById("restart");
+var saveScore = document.getElementById("saveScore");
+var restart = document.getElementById("restart");
 
 //Options
 
@@ -62,6 +63,8 @@ var optionD = document.getElementById("D");
 //Set up variables
 
 var startTime = 60;
+
+//HighScore Page
 
 //!!  GAME FUNCTION  !!//
 
@@ -80,6 +83,7 @@ startGame.addEventListener("click", function() {
         timer.textContent = startTime;
         if (startTime <= 0){
             clearInterval(timerOn);
+            endGame();
         }
     },1000);
 
@@ -167,6 +171,14 @@ function endGame() {
 
     gameOver.style.display = "block";
     playerScore.textContent = startTime;
+
+    restart.addEventListener("click", function() {
+
+        window.location.reload();
+
+    });
+
 }
+        
 
 

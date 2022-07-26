@@ -11,15 +11,30 @@
 
     <header>
         <a href="./scores.html">👾 View High Scores 👾</a>
+        <h1 class="welcome">Welcome to the Code Quiz</h1>
     </header>
 
+    <WebContainer class="webContainer">
+
+        <!-- MASCOT  -->
+
+        <mascotContainer>
+            <img src="./assets/images/PlaceHolder.png" alt="quiz mascot" class="mascot">
+        </mascotContainer>
+
+<!-- TITLE SCREEN SECTION -->
+
 <container id="titleScreen">
-    <h1>Welcome to the Code Quiz</h1>
 
-    <p>This is a timed quiz.</p>
+    <startCard>
+        <button id="start">Start!</button>
 
-    <button id="start">Start!</button>
+        <p class="description">This is a timed quiz.</p>
+    </startCard>
+
 </container>
+
+<!-- QUIZ SECTION -->
 
 <quizContainer id="quizContainer" style="display:none">
     <h2 id="question"> Placeholder Question</h2>
@@ -32,10 +47,17 @@
     <h3>Time Remaining: <p id="time"></p></h3>
 </quizContainer>
 
+<!-- GAME OVER SECTION -->
+
 <gameEnd id="gameOver" style="display:none">
     <h2>Game Over!</h2>
     <h3>Your score is <p id="score"></p></h3>
+    <input type="text" id="initials" placeholder="Your Initials Here">
+    <button id="saveScore">Save Score?</button>
+    <button id="restart">Restart?</button>
 </gameEnd>
+
+</WebContainer>
     
 <script src="./assets/js/script.js"></script>
 </body>

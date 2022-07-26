@@ -1,0 +1,25 @@
+* {
+    background-color: #fffbf1;
+}
+
+.webContainer {
+    
+}
+
+#titleScreen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mascot {
+    max-width: 100%;
+    height: 80vh;
+    object-fit: cover;
+}
+
+mascotContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+}
