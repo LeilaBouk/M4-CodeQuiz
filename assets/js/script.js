@@ -18,7 +18,7 @@ var quiz = [
         answer: "collection of stored data"
     },
     {
-        question: "Which of the following is NOT a common coding language",
+        question: "Which of the following is NOT a common coding language?",
         options: ["Javasript", "Python", "Swift", "Emolga"],
         answer: "Emolga"
     },
@@ -33,7 +33,7 @@ var quiz = [
         answer: "to merge two or more arrays"
     },
     {
-        question:"When creating a variable which should NOT have its value re-assigned it's best to use",
+        question:"Which variable cannot have its value reassigned?",
         options: ["var", "const", "let", "undefined"],
         answer: "const"
     },
@@ -41,7 +41,7 @@ var quiz = [
 
 //Screen Elements
 
-var startGame = document.querySelector("#start");
+var startGame = document.querySelector("#startBtn");
 
 var title = document.getElementById("titleScreen");
 var quizContainer = document.getElementById("quizContainer");
@@ -53,6 +53,8 @@ var restart = document.getElementById("restart");
 var saveScore = document.getElementById("saveScore");
 var restart = document.getElementById("restart");
 
+var mascot = document.getElementById("mascot");
+
 //Options
 
 var optionA = document.getElementById("A");
@@ -62,7 +64,7 @@ var optionD = document.getElementById("D");
 
 //Set up variables
 
-var startTime = 60;
+var startTime = 60000;
 
 //HighScore Page
 
@@ -72,7 +74,7 @@ startGame.addEventListener("click", function() {
     console.log("game started!!");
 
     title.style.display = "none";
-    quizContainer.style.display = "block";
+    quizContainer.style.display = "flex";
 
     //Make element appear on screen
     timer.textContent = startTime;
@@ -141,6 +143,12 @@ startGame.addEventListener("click", function() {
         }
         else {
             console.log("Wrong!")
+            // Mascot is sad
+            mascot.src = "./assets/images/sad.gif";
+            setTimeout(function () {
+                mascot.src = "./assets/images/PlaceHolder.png";
+            }, 1000);
+
             //take time off 
             if (startTime >= 0) {
             startTime -= 10;

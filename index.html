@@ -16,20 +16,25 @@
 
     <WebContainer class="webContainer">
 
-        <!-- MASCOT  -->
-
-        <mascotContainer>
-            <img src="./assets/images/PlaceHolder.png" alt="quiz mascot" class="mascot">
-        </mascotContainer>
-
 <!-- TITLE SCREEN SECTION -->
 
 <container id="titleScreen">
 
-    <startCard>
-        <button id="start">Start!</button>
+    <startCard class="startCard">
+        <button id="startBtn" class="start-btn">Start!</button>
 
-        <p class="description">This is a timed quiz.</p>
+        <p class="description">
+            This is a timed quiz. You will have 60 seconds to answer all the questions.
+            <br>
+            <br>
+            Each question you gues incorrectly will take 10 seconds off your time.
+            <br>
+            <br>
+            You score is calculated based on your time remaining after answering all questions.
+            <br>
+            <br>
+            Good Luck!
+        </p>
     </startCard>
 
 </container>
@@ -37,14 +42,25 @@
 <!-- QUIZ SECTION -->
 
 <quizContainer id="quizContainer" style="display:none">
+
     <h2 id="question"> Placeholder Question</h2>
-    <ul>
+
+    <questionCard class="question-card">
+
+    <ul class="options">
         <button id="A">Option A</button>
+        <br>
         <button id="B">Option B</button>
+        <br>
         <button id="C">Option C</button>
+        <br>
         <button id="D">Option D</button>
     </ul>
-    <h3>Time Remaining: <p id="time"></p></h3>
+
+    <h3 class="timer">Time Remaining: <p id="time"></p></h3>
+
+</questionCard>
+
 </quizContainer>
 
 <!-- GAME OVER SECTION -->
@@ -56,6 +72,13 @@
     <button id="saveScore">Save Score?</button>
     <button id="restart">Restart?</button>
 </gameEnd>
+
+
+        <!-- MASCOT  -->
+
+        <mascotContainer>
+            <img src="./assets/images/PlaceHolder.png" alt="quiz mascot" class="mascot" id="mascot">
+        </mascotContainer>
 
 </WebContainer>
     
