@@ -140,10 +140,17 @@ startGame.addEventListener("click", function() {
 
         if (quiz[quizIndex].answer === response) {
             console.log("Correct!")
+            
+            // MASCOT
+            mascot.src = "./assets/images/happy.gif";
+            setTimeout(function () {
+                mascot.src = "./assets/images/PlaceHolder.png";
+            }, 1000);
         }
+        
         else {
             console.log("Wrong!")
-            // Mascot is sad
+            // MASCOT
             mascot.src = "./assets/images/sad.gif";
             setTimeout(function () {
                 mascot.src = "./assets/images/PlaceHolder.png";

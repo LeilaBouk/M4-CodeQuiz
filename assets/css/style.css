@@ -1,10 +1,12 @@
 * {
     background-color: white;
+    font-family: 'Rubik', sans-serif;
 }
 
 :root {
     --medium: #54b087;
     --dark: #317959;
+    --darker: #204f3a;
 }
 
 /* HEADER STYLES */
@@ -12,6 +14,7 @@
 .welcome {
     text-align: center;
     margin-bottom: 10vh;
+    font-size: 55px;
 }
 
 /* CODE QUIZ STYLES */
@@ -53,6 +56,33 @@
     font-weight: 500;
     padding: 20px 30px;
 }
+  
+  .start-btn:hover {
+    box-shadow: var(--darker) 0 4px 8px, var(--darker) 0 -3px 0 inset;
+    transform: translateY(-6px);
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
+  
+  .start-btn:active {
+    background-color: var(--darker);
+    color: var(--medium);
+    transform: translateY(4px);
+  }
 
 .description {
     font-size: 20px;
@@ -85,9 +115,28 @@
     background-color: var(--medium);
 }
 
+.opt-btn {
+    background-color: var(--dark);
+    border-radius: 20px;
+    margin: 6px;
+    min-width: 300px;
+    border-style: none;
+    color: white;
+    cursor: pointer;
+    font-size: 30px;
+    font-weight: 500;
+    padding: 20px 30px;
+}
+
+.opt-btn:hover {
+    box-shadow: white 0 4px 20px;
+    transform: translateY(-3px);
+}
+
 .timer, #time {
     background-color: var(--medium);
 }
+
 
 /* MASCOT STYLES */
 
@@ -102,6 +151,4 @@ mascotContainer {
     flex-direction: row;
     justify-content: right;
 }
-
-
 
