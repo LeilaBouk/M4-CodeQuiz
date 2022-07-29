@@ -17,6 +17,10 @@
     font-size: 55px;
 }
 
+.welcome:hover {
+    cursor: pointer;
+}
+
 /* CODE QUIZ STYLES */
 
 .webContainer {

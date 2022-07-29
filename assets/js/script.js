@@ -52,6 +52,7 @@ var gameOver = document.getElementById("gameOver");
 var restart = document.getElementById("restart");
 var saveScore = document.getElementById("saveScore");
 var restart = document.getElementById("restart");
+var welcome = document.getElementById("welcome");
 
 var mascot = document.getElementById("mascot");
 
@@ -142,18 +143,18 @@ startGame.addEventListener("click", function() {
             console.log("Correct!")
             
             // MASCOT
-            mascot.src = "./assets/images/happy.gif";
+            mascot.src = "./assets/images/CORRECT.gif";
             setTimeout(function () {
-                mascot.src = "./assets/images/PlaceHolder.png";
-            }, 1000);
+                mascot.src = "./assets/images/IDLE.png";
+            }, 900);
         }
-        
+
         else {
             console.log("Wrong!")
             // MASCOT
-            mascot.src = "./assets/images/sad.gif";
+            mascot.src = "./assets/images/WRONG.gif";
             setTimeout(function () {
-                mascot.src = "./assets/images/PlaceHolder.png";
+                mascot.src = "./assets/images/IDLE.png";
             }, 1000);
 
             //take time off 
@@ -194,6 +195,11 @@ function endGame() {
     });
 
 }
+
+welcome.addEventListener("click", function() {
+
+    window.location.reload();
+});
         
 
 
