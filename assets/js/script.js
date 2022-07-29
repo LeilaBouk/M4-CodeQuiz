@@ -42,6 +42,7 @@ var quiz = [
 //Screen Elements
 
 var startGame = document.querySelector("#startBtn");
+var scoreBtn = document.getElementById("scores");
 
 var title = document.getElementById("titleScreen");
 var quizContainer = document.getElementById("quizContainer");
@@ -65,7 +66,7 @@ var optionD = document.getElementById("D");
 
 //Set up variables
 
-var startTime = 60000;
+var startTime = 60;
 
 //HighScore Page
 
@@ -200,6 +201,14 @@ welcome.addEventListener("click", function() {
 
     window.location.reload();
 });
+
+//HIGHSCORES
+
+scoreBtn.addEventListener("click", function() {
+    window.location = "./scores.html";
+});
+
+
         
 
 

@@ -14,7 +14,7 @@
 <body>
 
     <header>
-        <a href="./scores.html">👾 View High Scores 👾</a>
+       <button id="scores">👾 View High Scores 👾 </button> 
         <h1 class="welcome" id="welcome">Coding Quiz!</h1>
     </header>
 
@@ -71,10 +71,12 @@
 <!-- GAME OVER SECTION -->
 
 <gameEnd id="gameOver" style="display:none">
-    <h2>Game Over!</h2>
-    <h3>Your score is <p id="score"></p></h3>
+    <h2 class="GO">Game Over!</h2>
+    <h3 class="scoreTxt">Your score is: <p id="score"></p></h3>
+
     <input type="text" id="initials" placeholder="Your Initials Here">
     <button id="saveScore">Save Score?</button>
+    
     <button id="restart">Restart?</button>
 </gameEnd>
 
