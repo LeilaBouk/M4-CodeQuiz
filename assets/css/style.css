@@ -218,6 +218,15 @@
     background-color: var(--darkest);
 }
 
+/* HIGHSCORES STYLES */
+
+.scoreTitle {
+    text-align: center;
+    margin-bottom: 4vh;
+    font-size: 40px;
+    color: var(--blue);
+}
+
 /* MASCOT STYLES */
 
 .mascot {
@@ -231,5 +240,7 @@ mascotContainer {
     flex-direction: row;
     justify-content: right;
 }
+
+
 
 

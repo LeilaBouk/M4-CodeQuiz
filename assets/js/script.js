@@ -42,16 +42,12 @@ var quiz = [
 //Screen Elements
 
 var startGame = document.querySelector("#startBtn");
-var scoreBtn = document.getElementById("scores");
 
 var title = document.getElementById("titleScreen");
 var quizContainer = document.getElementById("quizContainer");
 var timer = document.getElementById("time");
 var question = document.getElementById("question");
-var playerScore = document.getElementById("score");
 var gameOver = document.getElementById("gameOver");
-var restart = document.getElementById("restart");
-var saveScore = document.getElementById("saveScore");
 var restart = document.getElementById("restart");
 var welcome = document.getElementById("welcome");
 
@@ -68,7 +64,13 @@ var optionD = document.getElementById("D");
 
 var startTime = 60;
 
-//HighScore Page
+//HighScore Elements
+
+var playerScore = document.getElementById("score");
+var saveScore = document.getElementById("saveScore");
+var scoreBtn = document.getElementById("scores");
+var scoreContainer = document.getElementById("scoreContainer");
+
 
 //!!  GAME FUNCTION  !!//
 
@@ -205,9 +207,32 @@ welcome.addEventListener("click", function() {
 //HIGHSCORES
 
 scoreBtn.addEventListener("click", function() {
-    window.location = "./scores.html";
+    // window.location = "./scores.html";
+    quizContainer.style.display = "none";
+    gameOver.style.display = "none";
+    title.style.display = "none";
+
+    scoreContainer.style.display = "block";
 });
 
+saveScore.addEventListener("click", function(event) {
+    event.preventDefault();
+
+    var initials = document.querySelector("#initials").value;
+
+    var li = document.createElement("li");
+    var t = document.createTextNode(initials);
+    li.appendChild(t);
+
+    // localStorage.setItem("initials", initials);
+
+    console.log(initials);
+    // console.log(finalScore);
+
+})
+
+// Maybe i should do like when you hit save it takes the var value and loads the scores page. Immediatly it appends it to the li then saves the ul to local storage?
+// Maybe i can save the entire li to local storage then just load that when you go to the high scores? No....
 
         
 
