@@ -91,6 +91,9 @@ startGame.addEventListener("click", function() {
             clearInterval(timerOn);
             endGame();
         }
+        if (quizIndex >= quiz.length){
+            clearInterval(timerOn);
+        }
     },1000);
 
 
