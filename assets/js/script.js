@@ -221,18 +221,43 @@ scoreBtn.addEventListener("click", function() {
 saveScore.addEventListener("click", function(event) {
     event.preventDefault();
 
-    var initials = document.querySelector("#initials").value;
+    save();
 
-    var li = document.createElement("li");
-    var t = document.createTextNode(initials);
-    li.appendChild(t);
+    // var initials = document.querySelector("#initials").value;
+
+    // var li = document.createElement("li");
+    // var t = document.createTextNode(initials);
+    // li.appendChild(t);
 
     // localStorage.setItem("initials", initials);
 
-    console.log(initials);
+    // console.log(initials);
+    // console.log(startTime);
     // console.log(finalScore);
+    
 
 })
+
+var scoresList = [];
+
+function save(){
+    
+    // Get the right data
+    var initials = document.querySelector("#initials").value;
+    var HiScore = playerScore.textContent;
+
+    // Format it for array
+    var playerData = {
+        player: initials,
+        highScore: HiScore
+    };
+
+    // Put the player score and initials into an array
+    scoresList.push(playerData);
+
+    console.log(scoresList);
+
+}
 
 // Maybe i should do like when you hit save it takes the var value and loads the scores page. Immediatly it appends it to the li then saves the ul to local storage?
 // Maybe i can save the entire li to local storage then just load that when you go to the high scores? No....
