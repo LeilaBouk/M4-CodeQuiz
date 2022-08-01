@@ -150,7 +150,7 @@ startGame.addEventListener("click", function() {
             console.log("Correct!")
             
             // MASCOT
-            mascot.src = "./assets/images/CORRECT.gif";
+            mascot.src = "./assets/images/correct.gif";
             setTimeout(function () {
                 mascot.src = "./assets/images/IDLE.png";
             }, 900);

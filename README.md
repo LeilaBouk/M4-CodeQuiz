@@ -42,4 +42,8 @@ HTML + CSS + JavaScript
 Use this page to take a short coding quiz! Save your scores to compare how you did on different tries. 
 A robot companion will cheer you on! 
 
+## Assets ✍️
+
+All illustrated / animated assets created by me for my personal use only. 
+
 ![Robo](./assets/images/Robot.png)
