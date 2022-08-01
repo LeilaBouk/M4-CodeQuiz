@@ -71,7 +71,7 @@ var saveScore = document.getElementById("saveScore");
 var scoreBtn = document.getElementById("scores");
 var scoreContainer = document.getElementById("scoreContainer");
 var initialInput = document.getElementById("initials");
-
+var savedList = document.getElementById("saved");
 
 //!!  GAME FUNCTION  !!//
 
@@ -210,22 +210,13 @@ welcome.addEventListener("click", function() {
 
 //HIGHSCORES
 
-scoreBtn.addEventListener("click", function() {
-    // window.location = "./scores.html";
-    quizContainer.style.display = "none";
-    gameOver.style.display = "none";
-    title.style.display = "none";
-
-    scoreContainer.style.display = "block";
-});
-
 saveScore.addEventListener("click", function(event) {
     event.preventDefault();
 
     save();
     
     // Disable the input so cant add duplicate scores
-    
+
     saveScore.style.display = "none";
     
     initialInput.value = "SCORE SAVED!";
@@ -234,9 +225,21 @@ saveScore.addEventListener("click", function(event) {
 
 })
 
+// THERE IS AN ISSUE WHERE IF THE ARRAY IS EMPTY THE SAVE BUTTON BREAKS
+
 var scoresList = [];
 
 function save(){
+
+    // Get the existing scores outta local storage first
+
+    var myScores = localStorage.getItem("savedScores");
+
+    myScores = JSON.parse(myScores);
+
+    for (var i = 0; i < myScores.length; i++) {
+        scoresList.push(myScores[i]);
+    }
     
     // Get the right data
     var initials = document.querySelector("#initials").value;
@@ -255,8 +258,27 @@ function save(){
 
 }
 
-// Maybe i should do like when you hit save it takes the var value and loads the scores page. Immediatly it appends it to the li then saves the ul to local storage?
-// Maybe i can save the entire li to local storage then just load that when you go to the high scores? No....
+scoreBtn.addEventListener("click", function() {
+    // window.location = "./scores.html";
+    quizContainer.style.display = "none";
+    gameOver.style.display = "none";
+    title.style.display = "none";
+
+    scoreContainer.style.display = "block";
+
+    for (var i = 0; i < scoresList.length; i++) {
+        var scoreLi = document.createElement("li");
+
+        scoreLi.innerHTML = "NAME: " + scoresList[i].player + " | HIGHSCORE: " + scoresList[i].highScore + " ✨";
+
+        savedList.appendChild(scoreLi);
+
+    }
+
+});
+
+
+
 
         
 
