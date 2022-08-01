@@ -70,6 +70,7 @@ var playerScore = document.getElementById("score");
 var saveScore = document.getElementById("saveScore");
 var scoreBtn = document.getElementById("scores");
 var scoreContainer = document.getElementById("scoreContainer");
+var initialInput = document.getElementById("initials");
 
 
 //!!  GAME FUNCTION  !!//
@@ -222,19 +223,14 @@ saveScore.addEventListener("click", function(event) {
     event.preventDefault();
 
     save();
-
-    // var initials = document.querySelector("#initials").value;
-
-    // var li = document.createElement("li");
-    // var t = document.createTextNode(initials);
-    // li.appendChild(t);
-
-    // localStorage.setItem("initials", initials);
-
-    // console.log(initials);
-    // console.log(startTime);
-    // console.log(finalScore);
     
+    // Disable the input so cant add duplicate scores
+    
+    saveScore.style.display = "none";
+    
+    initialInput.value = "SCORE SAVED!";
+
+    initialInput.disabled = true;
 
 })
 
@@ -255,7 +251,7 @@ function save(){
     // Put the player score and initials into an array
     scoresList.push(playerData);
 
-    console.log(scoresList);
+    localStorage.setItem("savedScores", JSON.stringify(scoresList));
 
 }
 
