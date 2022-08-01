@@ -215,7 +215,7 @@ saveScore.addEventListener("click", function(event) {
 
     save();
     
-    // Disable the input so cant add duplicate scores
+    // Disable the input so cant add duplicate scores by mistake
 
     saveScore.style.display = "none";
     
@@ -225,21 +225,28 @@ saveScore.addEventListener("click", function(event) {
 
 })
 
-// THERE IS AN ISSUE WHERE IF THE ARRAY IS EMPTY THE SAVE BUTTON BREAKS
-
 var scoresList = [];
+
+function updateScores(){
+    
+     // Get the existing scores outta local storage first
+
+     var myScores = localStorage.getItem("savedScores");
+
+     if (!myScores) {
+        return false;
+     } else {
+     myScores = JSON.parse(myScores);
+ 
+     for (var i = 0; i < myScores.length; i++) {
+         scoresList.push(myScores[i]);
+         }
+    };
+}
 
 function save(){
 
-    // Get the existing scores outta local storage first
-
-    var myScores = localStorage.getItem("savedScores");
-
-    myScores = JSON.parse(myScores);
-
-    for (var i = 0; i < myScores.length; i++) {
-        scoresList.push(myScores[i]);
-    }
+    updateScores();
     
     // Get the right data
     var initials = document.querySelector("#initials").value;
@@ -259,6 +266,11 @@ function save(){
 }
 
 scoreBtn.addEventListener("click", function() {
+
+    updateScores();
+
+    scoreBtn.disabled = true;
+
     // window.location = "./scores.html";
     quizContainer.style.display = "none";
     gameOver.style.display = "none";

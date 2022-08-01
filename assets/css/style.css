@@ -227,6 +227,16 @@
     color: var(--blue);
 }
 
+.savedScores {
+    font-size: 24px;
+    color: var(--red);
+    list-style: 🤖;
+}
+
+li {
+    margin: 20px 0;
+}
+
 /* MASCOT STYLES */
 
 .mascot {
